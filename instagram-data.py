@@ -13,13 +13,11 @@ import operator
 from tqdm import tqdm
 from pprint import pprint
 
-username = 'j_driscoll98'
-pwd = get_secret('password')
 
 
 # Secure Secret Key Logic
 
-JSON-based secrets module
+# JSON-based secrets module
 with open("secrets.json") as f:
     secrets = json.loads(f.read())
 
@@ -31,6 +29,9 @@ def get_secret(setting, secrets=secrets):
     except KeyError:
         error_msg = "Set the {0} environment variable".format(setting)
         raise Exception(error_msg)
+
+username = 'j_driscoll98'
+pwd = get_secret('password')
 
 
 def report(args):
